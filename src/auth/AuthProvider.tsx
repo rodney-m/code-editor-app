@@ -12,6 +12,11 @@ const AuthProvider = (props: PropsWithChildren<{}>) => {
     const onRedirectCallback = (appState : AppState | any) => {
         history.push(appState?.returnTo || window.location.pathname);
     };
+
+    console.log("domain ", config.auth0Domain)
+    console.log("clientId ", config.auth0ClientId)
+    console.log("domain React process.", process.env.REACT_APP_AUTH0_DOMAIN)
+    console.log("client React process.", process.env.REACT_APP_AUTH0_CLIENT_ID)
   
     return (
       <Auth0Provider
