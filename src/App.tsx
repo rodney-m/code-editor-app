@@ -4,11 +4,13 @@ import { Suspense } from 'react';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from 'routes/Routes';
+import StoreProvider from 'store/StoreProvider';
 import CustomThemeProvider from 'theme/CustomThemeProvider';
 
 function App() {
   return (
     <Suspense fallback={<Loading />}>
+      <StoreProvider>
       <Router>
         <AuthProvider>
           <CustomThemeProvider>
@@ -16,6 +18,7 @@ function App() {
           </CustomThemeProvider>
         </AuthProvider>
       </Router>
+      </StoreProvider>
     </Suspense>
   );
 }

@@ -13,3 +13,5 @@ const darkModeSlice = createSlice({
 });
 
 export const {toggleDarkMode } = darkModeSlice.actions;
+
+export const darkModeReducer = darkModeSlice.reducer;
